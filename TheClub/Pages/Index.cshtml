@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "The Club Brasil";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-Vindo</h1>
+    <p>A Melhor loja de roupas do Brasil</a>.</p>
+</div>
+<div class ="row">
+    @foreach (var Produto in Model.Produtos)
+    {
+       <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+                </div>
+        </div>
+
+    }
+</div>

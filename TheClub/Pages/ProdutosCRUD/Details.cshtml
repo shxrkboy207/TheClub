@@ -1,0 +1,43 @@
+﻿@page
+@model TheClub.ProdutosCrud.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>@Model.Produto.iDProduto.ToString("D6")</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto.iDNome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produto.iDNome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto.Descricao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produto.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto.preco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produto.preco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto.estoque)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produto.estoque)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Produto.iDProduto">Editar</a> |
+    <a asp-page="./Index">Voltar</a>
+</div>

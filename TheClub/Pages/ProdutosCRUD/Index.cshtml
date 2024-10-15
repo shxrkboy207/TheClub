@@ -1,0 +1,54 @@
+﻿@page
+@model TheClub.ProdutosCrud.IndexModel
+
+@{
+    ViewData["Title"] = "Novo Produto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto[0].iDNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto[0].Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto[0].preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto[0].estoque)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Produto) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.iDNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estoque)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.iDProduto">Alterar</a> |
+                <a asp-page="./Details" asp-route-id="@item.iDProduto">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.iDProduto">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
